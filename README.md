@@ -28,7 +28,19 @@ Even if hover is not working, autocomplete always works. See 5.
 5. `function useToken2({ email = token2.email }: TToken2)` gives no TS errors, however:
    1. `token1` props are comletelly missing. We will get a TS error for that when trying to use token2: `const t2 = useToken2({ email: "xxx" });` => This approach is not ok. The editors (Atom, VSCode) don't look up properly the inherited types, therefore they don't display a proper lookup.
    2. To add `token1` props to `useToken2({variant = token1.variant, name = token1.name, phone = token1.phone, email: token2.email})` makes no sense. What if the inheritance is N levels deep?
-6. Back to 1: `function useToken1(props: TToken1 = token1)`, `function useToken2(props: TToken2 = token2)`. Hover gives not much info, but autocomplete does. And no code duplication is needed.
+6. Back to 1: `function useToken1(props: TToken1 = token1)`, `function useToken2(props: TToken2 = token2)`. Hover:
+   1. It gives not much hover info, but autocomplete does.
+   2. No code / props duplication is needed.
+   3. default props don't work
+7. The right syntax would be:
+
+```ts
+export function useToken1(props: TToken1): string {
+  const mergedProps = { ...token1, ...props };
+  const { variant, name, phone } = mergedProps;
+  return ...;
+}
+```
 
 #### typedoc
 
@@ -53,3 +65,7 @@ Some rules for typedoc:
    1. Long descriptions should use short sentences.
    2. Each sentence should be separated into a new line.
    3. The description supports markdown.
+
+## Components
+
+So far, the same rules applies as for tokens.

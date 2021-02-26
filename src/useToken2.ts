@@ -11,7 +11,8 @@ import { TToken2, token2 } from ".";
  * Long lines are not truncated, the hover box goes to the edge of the screen.
  * A workaround is to break sentences into a new line.
  */
-export function useToken2(props: TToken2 = token2): string {
-  const { email } = props;
+export function useToken2(props: TToken2): string {
+  const mergedProps = { ...token2, ...props };
+  const { email } = mergedProps;
   return `useToken2: ${email}`;
 }
