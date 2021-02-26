@@ -1,0 +1,52 @@
+{
+	"id": 0,
+	"name": "Edo",
+	"kind": 0,
+	"kindString": "Project",
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "TToken1Variants",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "token1.ts",
+					"line": 1,
+					"character": 27
+				}
+			],
+			"type": {
+				"type": "union",
+				"types": [
+					{
+						"type": "literal",
+						"value": "variant1"
+					},
+					{
+						"type": "literal",
+						"value": "variant2"
+					}
+				]
+			}
+		}
+	],
+	"groups": [
+		{
+			"title": "Type aliases",
+			"kind": 4194304,
+			"children": [
+				1
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "index.ts",
+			"line": 1,
+			"character": 0
+		}
+	]
+}
