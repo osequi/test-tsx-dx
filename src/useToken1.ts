@@ -1,10 +1,12 @@
-import { TToken1, token1 } from ".";
+import { TToken1 } from ".";
 
 /**
- * Displays the token1.
- * @param  props The TToken1
- * @return       The token1 values combined into a string.
+ * [useToken1 description]
+ * @param  {variant [description]
+ * @param  name     [description]
+ * @param  phone}   [description]
+ * @return          [description]
  */
-export function useToken1(props = token1): string {
-  return "useToken1";
+export function useToken1({ variant, name, phone }: TToken1): string {
+  return `useToken1: ${variant}, ${name}, ${phone}`;
 }

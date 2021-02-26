@@ -10,4 +10,7 @@ Finding a good DX/UX for React and Typescript.
 
 ## B. Editor
 
-1. `function F(props: TInterface)` isn't intuitive for autocomplete / intellisense => props must be expanded / destructured.
+1. `function useToken1(props: TToken1)` isn't intuitive for autocomplete / intellisense => props must be expanded / destructured.
+2. `function useToken1(variant: TToken1Variants, name: string, phone?: string | string[])` displays well in autocomplete. However:
+   1. This new declaration has nothing to do with the `TToken1` type.
+3. `function useToken1({variant, name, phone}:TToken1)` displays well in autocomplete.
