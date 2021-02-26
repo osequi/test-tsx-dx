@@ -7,6 +7,6 @@ import { TToken2, token2 } from ".";
  * @param  props [description]
  * @return       [description]
  */
-export function useToken2(props: TToken2 = token2): string {
-  return "useToken2";
+export function useToken2({ email = token2.email }: TToken2): string {
+  return `useToken2: ${email}`;
 }

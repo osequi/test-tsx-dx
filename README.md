@@ -14,3 +14,4 @@ Finding a good DX/UX for React and Typescript.
 2. `function useToken1(variant: TToken1Variants, name: string, phone?: string | string[])` displays well in autocomplete. However:
    1. This new declaration has nothing to do with the `TToken1` type.
 3. `function useToken1({variant, name, phone}:TToken1)` displays well in autocomplete.
+4. `function useToken1({variant = token1.variant, name = token1.name, phone = token1.phone}: TToken1)` works well with default props.

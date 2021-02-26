@@ -6,5 +6,5 @@ export interface TToken2 extends TToken1 {
 
 export const token2: TToken2 = {
   ...token1,
-  email: null,
+  email: "token2email",
 };

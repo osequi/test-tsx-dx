@@ -8,6 +8,6 @@ export interface TToken1 {
 
 export const token1: TToken1 = {
   variant: "variant1",
-  name: null,
-  phone: null,
+  name: "token1Name",
+  phone: "token1Phone",
 };

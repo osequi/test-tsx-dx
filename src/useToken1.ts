@@ -1,4 +1,4 @@
-import { TToken1 } from ".";
+import { TToken1, token1 } from ".";
 
 /**
  * [useToken1 description]
@@ -7,6 +7,10 @@ import { TToken1 } from ".";
  * @param  phone}   [description]
  * @return          [description]
  */
-export function useToken1({ variant, name, phone }: TToken1): string {
+export function useToken1({
+  variant = token1.variant,
+  name = token1.name,
+  phone = token1.phone,
+}: TToken1): string {
   return `useToken1: ${variant}, ${name}, ${phone}`;
 }
