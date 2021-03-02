@@ -1,5 +1,5 @@
 import { TPage } from "../hooks";
-import { Type, TPageProps } from "../";
+import { Type, TPageProps, Description } from "../";
 
 export interface TProps {
   pageProps: TPageProps;
@@ -18,6 +18,7 @@ export function Props(props: TProps) {
     return (
       <li>
         {name2}: <Type pageProps={pageProps} type={type} />
+        <Description {...item} />
       </li>
     );
   });
