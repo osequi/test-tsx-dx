@@ -1,6 +1,22 @@
 # test-tsx-dx
 
-Finding a good DX/UX for React and Typescript.
+Finding a good DX/UX for React, Typescript and Typedoc.
+
+## Tldr;
+
+1. When deciding props syntax editors won't help (Atom, VSCode). The tooltip they show is always semi-usable. Can't get deep info from it (click on types) and docs are mixed up.
+2. When a function is started to be used, editors help. They correctly list / autocomplete the types.
+3. The `({prop1: type1, prop2: type2, ...})` syntax is not dry. Duplicates the `interface` definitions and on nested types if a prop changes all files where that prop is used must be updated. If hover would work as expected, that could justify this usage, but anyway, this is always no dry code and thus not best practice.
+4. What's left is to use the `({props: type})` syntax, and get info on autocomplete vs. hover. This is a Single-source of Truth approach with a worst UX/DX than spread props, but even the best UX/DX (with spread props) is not satisfactory.
+5. On default props the best approach is:
+
+```ts
+export function useToken1(props: TToken1): string {
+  const mergedProps = { ...token1DefaultProps, ...props };
+  const { variant, name, phone } = mergedProps;
+  return ...;
+}
+```
 
 ## Tokens
 
@@ -65,6 +81,7 @@ Some rules for typedoc:
    1. Long descriptions should use short sentences.
    2. Each sentence should be separated into a new line.
    3. The description supports markdown.
+3. An example should be included.
 
 ## Components
 
