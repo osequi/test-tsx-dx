@@ -1,3 +1,9 @@
+import { TToken } from "./settings";
+import { TTokenReturnTypeObject } from "./helpers";
+
+export type TFontReturnType = TTokenReturnTypeObject;
+export const fontDefaultReturnType = Object;
+
 /**
  * Defines the font variants.
  */
@@ -11,11 +17,7 @@ export type TFontVariants =
 /**
  * Defines the font type.
  */
-export interface TFont {
-  /**
-   * Which font variant to use?
-   */
-  variant: TFontVariants;
+export interface TFont extends TToken<TFontVariants> {
   /**
    * The font family.
    */
