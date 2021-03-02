@@ -8,7 +8,8 @@ Finding a good DX/UX for React, Typescript and Typedoc.
 2. When a function is started to be used, editors help. They correctly list / autocomplete the types.
 3. The `({prop1: type1, prop2: type2, ...})` syntax is not dry. Duplicates the `interface` definitions and on nested types if a prop changes all files where that prop is used must be updated. If hover would work as expected, that could justify this usage, but anyway, this is always no dry code and thus not best practice.
 4. What's left is to use the `({props: type})` syntax, and get info on autocomplete vs. hover. This is a Single-source of Truth approach with a worst UX/DX than spread props, but even the best UX/DX (with spread props) is not satisfactory.
-5. On default props the best approach is:
+5. The best hover UX would be example usage incorporated into docs.
+6. On default props the best approach is:
 
 ```ts
 export function useToken1(props: TToken1): string {
