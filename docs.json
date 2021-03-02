@@ -6,16 +6,174 @@
 	"flags": {},
 	"children": [
 		{
+			"id": 2,
+			"name": "TFont",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"shortText": "Defines the font type."
+			},
+			"children": [
+				{
+					"id": 4,
+					"name": "fontFamily",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"shortText": "The font family."
+					},
+					"sources": [
+						{
+							"fileName": "fonts.ts",
+							"line": 22,
+							"character": 12
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 6,
+					"name": "fontStyle",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"shortText": "The font style."
+					},
+					"sources": [
+						{
+							"fileName": "fonts.ts",
+							"line": 30,
+							"character": 11
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 5,
+					"name": "fontWeight",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"shortText": "The font weight."
+					},
+					"sources": [
+						{
+							"fileName": "fonts.ts",
+							"line": 26,
+							"character": 12
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "intrinsic",
+								"name": "number"
+							}
+						]
+					}
+				},
+				{
+					"id": 7,
+					"name": "letterSpacing",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"shortText": "The letter spacing."
+					},
+					"sources": [
+						{
+							"fileName": "fonts.ts",
+							"line": 34,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 3,
+					"name": "variant",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"shortText": "Which font variant to use?"
+					},
+					"sources": [
+						{
+							"fileName": "fonts.ts",
+							"line": 18,
+							"character": 9
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 1,
+						"name": "TFontVariants"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						4,
+						6,
+						5,
+						7,
+						3
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "fonts.ts",
+					"line": 14,
+					"character": 22
+				}
+			]
+		},
+		{
 			"id": 1,
-			"name": "TToken1Variants",
+			"name": "TFontVariants",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
+			"comment": {
+				"shortText": "Defines the font variants."
+			},
 			"sources": [
 				{
-					"fileName": "token1.ts",
-					"line": 1,
-					"character": 27
+					"fileName": "fonts.ts",
+					"line": 4,
+					"character": 25
 				}
 			],
 			"type": {
@@ -23,22 +181,76 @@
 				"types": [
 					{
 						"type": "literal",
-						"value": "variant1"
+						"value": "Default"
 					},
 					{
 						"type": "literal",
-						"value": "variant2"
+						"value": "Nimbus Sans Light"
+					},
+					{
+						"type": "literal",
+						"value": "Nimbus Sans Regular"
+					},
+					{
+						"type": "literal",
+						"value": "Nimbus Sans Medium"
+					},
+					{
+						"type": "literal",
+						"value": "Nimbus Sans Bold"
 					}
 				]
 			}
+		},
+		{
+			"id": 8,
+			"name": "fonts",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isConst": true
+			},
+			"comment": {
+				"shortText": "Defines the available fonts."
+			},
+			"sources": [
+				{
+					"fileName": "fonts.ts",
+					"line": 95,
+					"character": 18
+				}
+			],
+			"type": {
+				"type": "array",
+				"elementType": {
+					"type": "reference",
+					"id": 2,
+					"name": "TFont"
+				}
+			},
+			"defaultValue": "..."
 		}
 	],
 	"groups": [
+		{
+			"title": "Interfaces",
+			"kind": 256,
+			"children": [
+				2
+			]
+		},
 		{
 			"title": "Type aliases",
 			"kind": 4194304,
 			"children": [
 				1
+			]
+		},
+		{
+			"title": "Variables",
+			"kind": 32,
+			"children": [
+				8
 			]
 		}
 	],
