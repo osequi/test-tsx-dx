@@ -2,8 +2,17 @@ import React from "react";
 import { TData, TPageData, usePage, useTitle } from "../hooks";
 import { Props, Description } from "../";
 
+/**
+ * Defines the Page template.
+ */
 export interface TPageProps {
+  /**
+   * The data received from `useData`.
+   */
   data: TData;
+  /**
+   * The data received from `usePageData`.
+   */
   pageData: TPageData;
 }
 

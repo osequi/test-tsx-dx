@@ -1,5 +1,5 @@
 import { TPage } from "../hooks";
-import { Props } from "../";
+import { Page } from "../";
 
 export function References(props) {
   if (!props?.references) return <>No references</>;
@@ -7,7 +7,7 @@ export function References(props) {
 
   const references2 = references?.map((item) => (
     <li>
-      <Props {...item} />
+      <Page {...item} />
     </li>
   ));
 

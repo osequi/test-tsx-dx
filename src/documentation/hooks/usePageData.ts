@@ -1,18 +1,15 @@
 import { flattenDeep, compact } from "lodash";
-import { TData, TPageData } from ".";
+import { TData, TPageData, TTemplate } from ".";
 
-export interface TStaticPropsParams {
+export interface TParams {
   slug: string;
 }
 
 /**
- * Returns data for a page.
- * See `getStaticProps` in `[slug].tsx`
+ * Returns data for a page for `getStaticProps` in `[slug].tsx`
  */
-export function useSlug(
-  data: TData,
-  params: TStaticPropsParams
-): TPageData | null {
+export function usePageData(props: TTemplate): TPageData | null {
+  const { data, params } = props;
   const { children } = data;
   const { slug } = params;
 
@@ -20,7 +17,9 @@ export function useSlug(
   if (found) return found;
 
   const tryToFind = compact(
-    flattenDeep(children?.map((item) => useSlug(item, params)))
+    flattenDeep(
+      children?.map((item) => usePageData({ data: item, params: params }))
+    )
   ).pop();
   if (tryToFind) return tryToFind;
 

@@ -1,15 +1,29 @@
 import React, { ReactNode } from "react";
+import { mergeProps } from "@react-aria/utils";
 import { Menu } from "../";
-import { TData } from "../hooks";
+import { TData, TParams } from "../hooks";
 
+/**
+ * Defines the Template interface.
+ */
 export interface TTemplate {
+  /**
+   * The data received from `useData`.
+   */
   data?: TData;
+  /**
+   * The params received from Nextjs when a single page is displayed.
+   */
+  params?: TParams;
+  /**
+   * The content of the template.
+   */
   children?: ReactNode;
-  params?: {
-    slug: string;
-  };
 }
 
+/**
+ * Defines the Template default props.
+ */
 const defaultProps: TTemplate = {
   data: null,
   children: null,
@@ -18,8 +32,12 @@ const defaultProps: TTemplate = {
   },
 };
 
-export function Template(props: TTemplate = defaultProps) {
-  const { data, params, children } = props;
+/**
+ * Displays the Template.
+ */
+export function Template(props: TTemplate) {
+  const mergedProps = mergeProps(defaultProps, props);
+  const { data, params, children } = mergedProps;
   const { name } = data;
   const { slug } = params;
 
