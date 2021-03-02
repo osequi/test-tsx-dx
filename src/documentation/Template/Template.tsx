@@ -1,20 +1,12 @@
 import React, { ReactNode } from "react";
 import { mergeProps } from "@react-aria/utils";
 import { Menu } from "../";
-import { TData, TParams } from "../hooks";
+import { TPageDataProps } from "../hooks";
 
 /**
  * Defines the Template interface.
  */
-export interface TTemplate {
-  /**
-   * The data received from `useData`.
-   */
-  data?: TData;
-  /**
-   * The params received from Nextjs when a single page is displayed.
-   */
-  params?: TParams;
+export interface TTemplate extends TPageDataProps {
   /**
    * The content of the template.
    */

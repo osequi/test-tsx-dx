@@ -1,14 +1,26 @@
 import { flattenDeep, compact } from "lodash";
-import { TData, TPageData, TTemplate } from ".";
+import { TData, TPageData } from ".";
 
-export interface TParams {
-  slug: string;
+// TPageData is defined in usePageData.types.ts
+
+/**
+ * Defines the interface for the `usePageData` props.
+ */
+export interface TPageDataProps {
+  /**
+   * The data received from `useData`.
+   */
+  data?: TData;
+  /**
+   * The params received from Nextjs when a single page is displayed.
+   */
+  params?: { slug: string };
 }
 
 /**
  * Returns data for a page for `getStaticProps` in `[slug].tsx`
  */
-export function usePageData(props: TTemplate): TPageData | null {
+export function usePageData(props: TPageDataProps): TPageData | null {
   const { data, params } = props;
   const { children } = data;
   const { slug } = params;

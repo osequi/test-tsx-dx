@@ -1,7 +1,7 @@
 /**
  * Defines a minimal interface to Typedoc generated JSON data.
  *
- * This is a partial mapping of the data, good enough to create a menu structure. For a more thorough mapping see `usePage`.
+ * This is a partial mapping of the data, good enough to create a menu structure.
  */
 export interface TData {
   name: string;
