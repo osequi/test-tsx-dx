@@ -1,5 +1,6 @@
 import React from "react";
-import { TData, TPageData, usePage } from "../hooks";
+import { TData, TPageData, usePage, useTitle } from "../hooks";
+import { Props } from "../";
 
 export interface TPageProps {
   data: TData;
@@ -9,14 +10,15 @@ export interface TPageProps {
 export function Page(props: TPageProps) {
   if (!props?.pageData) return <Undefined {...props} />;
 
-  const {
-    pageData: { name },
-  } = props;
   const page = usePage(props);
+  const { name, description } = page;
+  const title = useTitle({ name: name, kindString: "Module" });
 
   return (
     <div>
-      <h1>{name}</h1>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <Props {...page} />
       <div>
         <pre>{JSON.stringify(page, null, 2)}</pre>
       </div>
