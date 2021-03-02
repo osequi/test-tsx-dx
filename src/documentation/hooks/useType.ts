@@ -1,7 +1,7 @@
 import { TPageProps } from "../";
 import {
   TData,
-  TPage,
+  TPageNormalized,
   TTypeAny,
   TTypeReference,
   TTypeIntrinsic,
@@ -10,14 +10,14 @@ import {
   TTypeLiteral2,
   TTypeReflection,
   useTypeFind,
-  usePage,
+  usePageNormalized,
 } from ".";
 import { uniqBy, flattenDeep } from "lodash";
 
 export interface TType {
   name: string;
   variant: "value" | "reference" | "array";
-  references?: TPage[];
+  references?: TPageNormalized[];
 }
 
 export function useType(props: TPageProps): TType {
@@ -38,7 +38,9 @@ function useReference(type: TTypeAny, data: TData): TType {
         ? {
             name: name1,
             variant: "reference",
-            references: [usePage({ data: data, pageData: reference })],
+            references: [
+              usePageNormalized({ data: data, pageData: reference }),
+            ],
           }
         : {
             name: name1,
@@ -54,7 +56,9 @@ function useReference(type: TTypeAny, data: TData): TType {
         ? {
             name: declaration.name,
             variant: "reference",
-            references: [usePage({ data: data, pageData: declaration })],
+            references: [
+              usePageNormalized({ data: data, pageData: declaration }),
+            ],
           }
         : {
             name: declaration.name,

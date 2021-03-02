@@ -10,7 +10,10 @@ import {
   TTypeReference,
 } from ".";
 
-export interface TPage {
+/**
+ * Defines the interface for a normalized page.
+ */
+export interface TPageNormalized {
   name: string;
   description: string;
   type: string;
@@ -18,11 +21,14 @@ export interface TPage {
   raw?: any;
 }
 
-export function usePage(props: TPageProps): TPage {
+/**
+ * Converts raw page data into a normalized one.
+ */
+export function usePageNormalized(props: TPageProps): TPageNormalized {
   const { pageData, data } = props;
-  const normalizedPageData = usePageNormalizedData(pageData);
+  const normalizedPageData = useNormalizedPageData(pageData);
   const type = usePageType(pageData);
-  const propsPageData = usePageData(type, data, normalizedPageData);
+  const propsPageData = usePropsPageData(type, data, normalizedPageData);
   return {
     name: useTitle(pageData),
     description: useDescription(normalizedPageData),
@@ -34,7 +40,7 @@ export function usePage(props: TPageProps): TPage {
 
 // in case of components when they have a single prop it is immediately destuctured
 // ie: Image(props: TImage) => the TImage props will be shown
-function usePageData(
+function usePropsPageData(
   type: string,
   data: TData,
   normalizedPageData: TPageData
@@ -77,7 +83,7 @@ function usePageType(pageData: TPageData): string {
   }
 }
 
-function usePageNormalizedData(pageData: TPageData): TPageData {
+function useNormalizedPageData(pageData: TPageData): TPageData {
   const { kindString } = pageData;
 
   switch (kindString) {

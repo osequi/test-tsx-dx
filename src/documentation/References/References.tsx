@@ -1,4 +1,3 @@
-import { TPage } from "../hooks";
 import { Page, TPageProps } from "../";
 
 export interface TReferences {
@@ -9,13 +8,15 @@ export interface TReferences {
 export function References(props: TReferences) {
   const { pageProps, references } = props;
   if (!props?.references) return <>No references</>;
-  const { data } = pageProps;
 
-  const references2 = references?.map((item) => (
-    <li>
-      <Page data={data} pageData={item} />
-    </li>
-  ));
+  const references2 = references?.map((item) => {
+    if (!item) return null;
+    return (
+      <li>
+        <Page data={pageProps.data} normalizedPageData={item} />
+      </li>
+    );
+  });
 
   return <ul>{references2}</ul>;
 }

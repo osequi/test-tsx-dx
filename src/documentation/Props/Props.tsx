@@ -1,5 +1,5 @@
-import { TPage, TPageProps } from "../hooks";
-import { Type } from "../";
+import { TPage } from "../hooks";
+import { Type, TPageProps } from "../";
 
 export interface TProps {
   pageProps: TPageProps;
