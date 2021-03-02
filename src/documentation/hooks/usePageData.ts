@@ -35,8 +35,6 @@ export function usePageData(props: TPageDataProps): TPageData | null {
   ).pop();
   if (tryToFind) return tryToFind;
 
-  // TODO: 'reset' returns null. There is no entry named 'reset'. The `reset.ts` file should be found and the contents loaded.
-
   //// NOTE: Next.js needs an explicit `null` return type vs `undefined`. `undefined` is returned when the `?:` ternary operator is used instead of `if`s.
   return null;
 }

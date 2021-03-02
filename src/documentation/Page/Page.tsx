@@ -27,7 +27,7 @@ export function Page(props: TPageProps) {
     <div>
       <h1>{title}</h1>
       <Description {...page} />
-      <Props {...page} />
+      <Props pageProps={props} page={page} />
       <div>
         <pre>{JSON.stringify(page, null, 2)}</pre>
       </div>

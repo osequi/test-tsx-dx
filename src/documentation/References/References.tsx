@@ -1,13 +1,19 @@
 import { TPage } from "../hooks";
-import { Page } from "../";
+import { Page, TPageProps } from "../";
 
-export function References(props) {
+export interface TReferences {
+  pageProps: TPageProps;
+  references: any;
+}
+
+export function References(props: TReferences) {
+  const { pageProps, references } = props;
   if (!props?.references) return <>No references</>;
-  const { references } = props;
+  const { data } = pageProps;
 
   const references2 = references?.map((item) => (
     <li>
-      <Page {...item} />
+      <Page data={data} pageData={item} />
     </li>
   ));
 

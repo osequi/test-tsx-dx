@@ -1,17 +1,23 @@
-import { TPage } from "../hooks";
+import { TPage, TPageProps } from "../hooks";
 import { Type } from "../";
 
-export function Props(props: TPage) {
-  if (!props?.props) return <>No props</>;
+export interface TProps {
+  pageProps: TPageProps;
+  page: TPage;
+}
 
-  const { props: props2 } = props;
+export function Props(props: TProps) {
+  const { pageProps, page } = props;
+  if (!page?.props) return <>No props</>;
+
+  const { props: props2 } = page;
   const props3 = Array.isArray(props2) ? props2 : [props2];
   const props4 = props3.map((item) => {
     const { name, required, type } = item;
     const name2 = required ? `${name} * ` : name;
     return (
       <li>
-        {name2}: <Type {...type} />
+        {name2}: <Type pageProps={pageProps} type={type} />
       </li>
     );
   });
