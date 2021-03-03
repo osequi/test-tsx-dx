@@ -20,7 +20,7 @@ export interface TData {
  * @param  path     The `path` package.
  * @return          Any. This async function doesn't accept `TData` as return type.
  */
-export async function useData(folder, fileName, fs, path) {
+export async function useData(folder: string, fileName: string, fs, path) {
   const dataDirectory = path.join(process.cwd(), folder);
   const filePath = path.join(dataDirectory, fileName);
   const fileContents = await fs.readFile(filePath, "utf8");

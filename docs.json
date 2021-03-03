@@ -199,6 +199,101 @@
 			]
 		},
 		{
+			"id": 15,
+			"name": "TSplitScreen",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"shortText": "Defines the Split Screen interface."
+			},
+			"children": [
+				{
+					"id": 16,
+					"name": "column",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"shortText": "The size of the first column."
+					},
+					"sources": [
+						{
+							"fileName": "splitScreen.ts",
+							"line": 8,
+							"character": 8
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": 17,
+					"name": "gap",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"shortText": "The gap between the columns."
+					},
+					"sources": [
+						{
+							"fileName": "splitScreen.ts",
+							"line": 12,
+							"character": 5
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "number"
+							},
+							{
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							}
+						]
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						16,
+						17
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "splitScreen.ts",
+					"line": 4,
+					"character": 29
+				}
+			]
+		},
+		{
 			"id": 1,
 			"name": "TFontReturnType",
 			"kind": 4194304,
@@ -308,6 +403,28 @@
 			"defaultValue": "..."
 		},
 		{
+			"id": 18,
+			"name": "splitScreen",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "splitScreen.ts",
+					"line": 15,
+					"character": 24
+				}
+			],
+			"type": {
+				"type": "reference",
+				"id": 15,
+				"name": "TSplitScreen"
+			},
+			"defaultValue": "..."
+		},
+		{
 			"id": 11,
 			"name": "useFont",
 			"kind": 64,
@@ -387,6 +504,48 @@
 					}
 				}
 			]
+		},
+		{
+			"id": 19,
+			"name": "useSplitScreen",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "useSplitScreen.ts",
+					"line": 3,
+					"character": 30
+				}
+			],
+			"signatures": [
+				{
+					"id": 20,
+					"name": "useSplitScreen",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 21,
+							"name": "__namedParameters",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"id": 15,
+								"name": "TSplitScreen"
+							},
+							"defaultValue": "..."
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			]
 		}
 	],
 	"groups": [
@@ -394,7 +553,8 @@
 			"title": "Interfaces",
 			"kind": 256,
 			"children": [
-				4
+				4,
+				15
 			]
 		},
 		{
@@ -410,14 +570,16 @@
 			"kind": 32,
 			"children": [
 				2,
-				10
+				10,
+				18
 			]
 		},
 		{
 			"title": "Functions",
 			"kind": 64,
 			"children": [
-				11
+				11,
+				19
 			]
 		}
 	],
