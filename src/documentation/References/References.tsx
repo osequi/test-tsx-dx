@@ -1,19 +1,18 @@
 import { Page, TPageProps } from "../";
 
-export interface TReferences {
-  pageProps: TPageProps;
+export interface TReferences extends TPageProps {
   references: any;
 }
 
 export function References(props: TReferences) {
-  const { pageProps, references } = props;
+  const { references, data } = props;
   if (!props?.references) return <>No references</>;
 
   const references2 = references?.map((item) => {
     if (!item) return null;
     return (
       <li>
-        <Page data={pageProps.data} normalizedPageData={item} />
+        <Page data={data} normalizedPageData={item} />
       </li>
     );
   });

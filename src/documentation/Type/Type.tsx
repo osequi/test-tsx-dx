@@ -1,13 +1,12 @@
 import { TType } from "../hooks";
 import { References, TPageProps } from "../";
 
-export interface TTypeProps {
-  pageProps: TPageProps;
+export interface TTypeProps extends TPageProps {
   type: TType;
 }
 
 export function Type(props: TTypeProps) {
-  const { pageProps, type } = props;
+  const { type } = props;
   if (!type) return <>No type</>;
 
   const { name, references } = type;
@@ -15,7 +14,7 @@ export function Type(props: TTypeProps) {
   return (
     <>
       {name}
-      <References pageProps={pageProps} references={references} />
+      <References {...props} references={references} />
     </>
   );
 }

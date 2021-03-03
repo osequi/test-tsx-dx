@@ -53,7 +53,7 @@ export function Page(props: TPageProps) {
     <div>
       <h1>{title}</h1>
       <Description {...page} />
-      <Props pageProps={props} page={page} />
+      <Props {...props} normalizedPageData={page} />
       {/*<div>
         <pre>{JSON.stringify(page, null, 2)}</pre>
       </div>

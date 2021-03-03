@@ -1,6 +1,6 @@
-import { TPage } from "../hooks";
+import { TPageNormalized } from "../hooks";
 
-export function Description(props: TPage) {
+export function Description(props: TPageNormalized) {
   if (!props?.description) return <>No description</>;
 
   const { description } = props;
