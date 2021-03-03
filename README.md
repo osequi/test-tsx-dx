@@ -2,7 +2,7 @@
 
 Finding a good DX/UX for React, Typescript and Typedoc.
 
-## Props;
+## Props
 
 1. No matter the approach, code is duplicated.
 
@@ -65,3 +65,6 @@ In order to get more info one should:
 a. `ctrl+click` over `useSplitScreen`
 b. `ctrl+hover` on `TSplitScreen` to get the props and types
 c. `ctrl+hover` on `splitScreen` to get default values
+This requires VSCode. In Atom `ctrl` is not available afaik.
+
+## Docs
