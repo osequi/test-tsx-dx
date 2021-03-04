@@ -5,7 +5,11 @@ Finding a good DX/UX for React, Typescript and Typedoc.
 ## Docs (UX)
 
 1. `tsdoc` might be enough only for an API doc, not for a fully featured documentation. For that we might go with MDX.
-2. The generator is very weak. For example, it breaks when a token has no `const` entry (aka. default props)
+2. MDX:
+3. Only via `getStaticProps`
+4. Requires a plugin: https://github.com/hashicorp/next-mdx-remote
+5. Requires to list the components used by the MDX upfront
+6. The generator is very weak. For example, it breaks when a token has no `const` entry (aka. default props)
 
 ## Props (DX)
 
