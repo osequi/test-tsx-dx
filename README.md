@@ -2,7 +2,12 @@
 
 Finding a good DX/UX for React, Typescript and Typedoc.
 
-## Props
+## Docs (UX)
+
+1. `tsdoc` might be enough only for an API doc, not for a fully featured documentation. For that we might go with MDX.
+2. The generator is very weak. For example, it breaks when a token has no `const` entry (aka. default props)
+
+## Props (DX)
 
 1. No matter the approach, code is duplicated.
 
@@ -66,5 +71,3 @@ a. `ctrl+click` over `useSplitScreen`
 b. `ctrl+hover` on `TSplitScreen` to get the props and types
 c. `ctrl+hover` on `splitScreen` to get default values
 This requires VSCode. In Atom `ctrl` is not available afaik.
-
-## Docs

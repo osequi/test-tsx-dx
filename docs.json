@@ -294,6 +294,52 @@
 			]
 		},
 		{
+			"id": 22,
+			"name": "TTest",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"shortText": "A test interface."
+			},
+			"children": [
+				{
+					"id": 23,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "test.ts",
+							"line": 5,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						23
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "test.ts",
+					"line": 4,
+					"character": 22
+				}
+			]
+		},
+		{
 			"id": 1,
 			"name": "TFontReturnType",
 			"kind": 4194304,
@@ -383,12 +429,22 @@
 				"isConst": true
 			},
 			"comment": {
-				"shortText": "Defines the available fonts."
+				"shortText": "Defines the available fonts.",
+				"tags": [
+					{
+						"tag": "values",
+						"text": "Default|Nimbus Sans Light|Nimbus Sans Regular|Nimbus Sans Medium|Nimbus Sans Bold"
+					},
+					{
+						"tag": "defaultvalue",
+						"text": "Default\n"
+					}
+				]
 			},
 			"sources": [
 				{
 					"fileName": "fonts.ts",
-					"line": 97,
+					"line": 100,
 					"character": 18
 				}
 			],
@@ -528,7 +584,7 @@
 					"parameters": [
 						{
 							"id": 21,
-							"name": "__namedParameters",
+							"name": "props",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
@@ -554,7 +610,8 @@
 			"kind": 256,
 			"children": [
 				4,
-				15
+				15,
+				22
 			]
 		},
 		{
